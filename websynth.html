@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mono Synthesizer</title>
+    <script src="synth.js"></script>
+    <script src="visualizer.js"></script>
+    <script src="spectrogram.js"></script>
+</head>
+<body>
+<h1>Mono Synthesizer</h1>
+<p>Oscillator 1:
+    <select id="osc1_waveform">
+        <option value="sine">Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth">Sawtooth</option>
+        <option value="triangle">Triangle</option>
+    </select>
+    <input id="osc1_pitch" type="range" min="20" max="2000" value="440" step="1">
+    <input id="osc1_level" type="range" min="0" max="1" value="1" step="0.01">
+</p>
+<p>Oscillator 2:
+    <select id="osc2_waveform">
+        <option value="sine">Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth">Sawtooth</option>
+        <option value="triangle">Triangle</option>
+    </select>
+    <input id="osc2_pitch" type="range" min="20" max="2000" value="440" step="1">
+    <input id="osc2_level" type="range" min="0" max="1" value="1" step="0.01">
+</p>
+<p>Low-pass Filter Cutoff:
+    <input id="filter_cutoff" type="range" min="20" max="20000" value="10000" step="1">
+</p>
+<p>Resonance:
+    <input id="filter_resonance" type="range" min="0" max="40" value="0" step="0.1">
+</p>
+<button id="start_stop" onclick="buildsynth()">Start</button>
+<p>
+    <canvas id="waveformCanvas" width="800" height="300"></canvas>
+    <input id="visualizer_speed" type="range" min="1" max="100" value="60" step="1">
+</p>
+<p>
+    <canvas id="spectrogramCanvas" width="640" height="200"></canvas>
+</p>
+</body>
+</html>
